@@ -339,6 +339,9 @@
     }
 
     footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #bbb; z-index: 2; }
+    .stars { position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; pointer-events: none; z-index: 1; }
+    .star { position: absolute; background: rgba(255,255,255,0.8); border-radius: 50%; animation: twinkle var(--anim-dur) ease-in-out infinite; }
+    @keyframes twinkle { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
     @media (max-width: 768px) { 
       .grid-container { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
       .download-modal { width: 95%; padding: 20px; }
