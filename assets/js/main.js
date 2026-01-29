@@ -1,5 +1,23 @@
-let currentSort = 'default';
+    const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1454428886577188924/qOOuaPFVttB2Unq2YhHc-rOrrFOQzC3h2IKt1GSTZv8exiHhOFGjlX2stIGXQdSx0Y87';
+    let currentSort = 'default';
     let itemsData = [];
+
+    // Stars background
+    function createStars() {
+      const container = document.getElementById('stars');
+      const frag = document.createDocumentFragment();
+      for (let i = 0; i < 50; i++) {
+        const s = document.createElement('div');
+        s.className = 'star';
+        const size = Math.random() * 2 + 1;
+        s.style.width = s.style.height = `${size}px`;
+        s.style.left = `${Math.random() * 100}%`;
+        s.style.top = `${Math.random() * 100}%`;
+        s.style.setProperty('--anim-dur', `${Math.random() * 3 + 2}s`);
+        frag.appendChild(s);
+      }
+      container.appendChild(frag);
+    }
 
     // Load download counts from localStorage
     function loadDownloadCounts() {
@@ -159,6 +177,8 @@ let currentSort = 'default';
         }
       });
     }
+
+    createStars();
 
     // Search filter
     let searchTimeout;
